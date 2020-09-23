@@ -1,0 +1,22 @@
+{
+    "name": "aso824/octoprint-php-api",
+    "description": "OctoPrint API client written in PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Szenborn",
+            "email": "aso.gdynia@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "aso824\\OctoPrintPHP\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.4",
+        "psr/http-message": "^1.0",
+        "psr/http-client": "^1.0"
+    }
+}
