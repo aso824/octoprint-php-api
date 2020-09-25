@@ -10,12 +10,15 @@ use aso824\OctoPrintPHP\Factory\ServiceFactory;
 use aso824\OctoPrintPHP\Factory\ServiceFactoryInterface;
 use aso824\OctoPrintPHP\Request\RequestHandler;
 use aso824\OctoPrintPHP\Request\RequestHandlerInterface;
+use aso824\OctoPrintPHP\Service\ConnectionServiceInterface;
 use aso824\OctoPrintPHP\Service\ServiceInterface;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 
 /**
  * @method CurrentUser getCurrentUser()
  * @method Version getVersion()
+ *
+ * @property-read ConnectionServiceInterface $connection
  */
 final class Client implements ClientInterface
 {

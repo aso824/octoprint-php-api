@@ -11,6 +11,6 @@ interface RequestDTOInterface
 
     public function getPath(): string;
     public function getMethod(): string;
-    public function getResponseClass(): string;
+    public function getResponseClass(): ?string;
     public function getBody(): ?array;
 }
