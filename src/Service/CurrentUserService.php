@@ -8,9 +8,7 @@ use aso824\OctoPrintPHP\DTO\AccessControl\CurrentUser;
 use aso824\OctoPrintPHP\DTO\AccessControl\CurrentUserRequest;
 
 /**
- * Class CurrentUserService
- *
- * @package aso824\OctoPrintPHP\Service
+ * @package aso824\OctoPrintPHP
  * @internal
  */
 final class CurrentUserService extends AbstractService implements CurrentUserServiceInterface

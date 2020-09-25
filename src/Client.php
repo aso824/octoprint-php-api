@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace aso824\OctoPrintPHP;
 
 use aso824\OctoPrintPHP\DTO\AccessControl\CurrentUser;
+use aso824\OctoPrintPHP\DTO\Version\Version;
 use aso824\OctoPrintPHP\Factory\ServiceFactory;
 use aso824\OctoPrintPHP\Factory\ServiceFactoryInterface;
 use aso824\OctoPrintPHP\Request\RequestHandler;
@@ -14,6 +15,7 @@ use Psr\Http\Client\ClientInterface as HttpClientInterface;
 
 /**
  * @method CurrentUser getCurrentUser()
+ * @method Version getVersion()
  */
 final class Client implements ClientInterface
 {
