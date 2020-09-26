@@ -11,6 +11,7 @@ use aso824\OctoPrintPHP\Factory\ServiceFactoryInterface;
 use aso824\OctoPrintPHP\Request\RequestHandler;
 use aso824\OctoPrintPHP\Request\RequestHandlerInterface;
 use aso824\OctoPrintPHP\Service\ConnectionServiceInterface;
+use aso824\OctoPrintPHP\Service\FilesServiceInterface;
 use aso824\OctoPrintPHP\Service\ServiceInterface;
 use Psr\Http\Client\ClientInterface as HttpClientInterface;
 
@@ -19,6 +20,7 @@ use Psr\Http\Client\ClientInterface as HttpClientInterface;
  * @method Version getVersion()
  *
  * @property-read ConnectionServiceInterface $connection
+ * @property-read FilesServiceInterface      $files
  */
 final class Client implements ClientInterface
 {

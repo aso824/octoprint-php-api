@@ -8,6 +8,7 @@ interface RequestDTOInterface
 {
     public const METHOD_GET = 'GET';
     public const METHOD_POST = 'POST';
+    public const METHOD_DELETE = 'DELETE';
 
     public function getPath(): string;
     public function getMethod(): string;
