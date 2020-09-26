@@ -28,6 +28,9 @@ final class File implements ResponseDTOInterface
     /** @var File[]|null */
     private ?array $children;
 
+    /** @var FilePrint */
+    private ?FilePrint $prints = null;
+
     public function getName(): string
     {
         return $this->name;
@@ -81,5 +84,10 @@ final class File implements ResponseDTOInterface
     public function getChildren(): ?array
     {
         return $this->children;
+    }
+
+    public function getPrints(): FilePrint
+    {
+        return $this->prints;
     }
 }
