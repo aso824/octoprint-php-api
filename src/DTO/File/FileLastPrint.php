@@ -11,7 +11,7 @@ namespace aso824\OctoPrintPHP\DTO\File;
 final class FileLastPrint
 {
     private int $date;
-    private int $printTime;
+    private ?int $printTime = null;
     private bool $success;
 
     public function getDate(): int
@@ -19,7 +19,7 @@ final class FileLastPrint
         return $this->date;
     }
 
-    public function getPrintTime(): int
+    public function getPrintTime(): ?int
     {
         return $this->printTime;
     }

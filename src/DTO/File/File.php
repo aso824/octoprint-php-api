@@ -28,7 +28,7 @@ final class File implements ResponseDTOInterface
     /** @var File[]|null */
     private ?array $children;
 
-    /** @var FilePrint */
+    /** @var FilePrint|null */
     private ?FilePrint $prints = null;
 
     public function getName(): string
@@ -86,7 +86,7 @@ final class File implements ResponseDTOInterface
         return $this->children;
     }
 
-    public function getPrints(): FilePrint
+    public function getPrints(): ?FilePrint
     {
         return $this->prints;
     }

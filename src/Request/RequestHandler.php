@@ -13,8 +13,12 @@ use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
+use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\PropertyNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -32,11 +36,17 @@ final class RequestHandler implements RequestHandlerInterface
         $this->httpClient = $httpClient;
 
         $this->requestFactory = new Psr17Factory();
+
+        $extractor = new PropertyInfoExtractor([], [new PhpDocExtractor(), new ReflectionExtractor()]);
+
         $this->serializer = new Serializer(
             [
-                new PropertyNormalizer(null, null, new ReflectionExtractor()),
+                new ArrayDenormalizer(),
+                new PropertyNormalizer(null, null, $extractor),
             ],
-            [new JsonEncoder()]
+            [
+                new JsonEncoder(),
+            ]
         );
     }
 
@@ -61,7 +71,14 @@ final class RequestHandler implements RequestHandlerInterface
 
         $body = $httpResponse->getBody()->getContents();
 
-        return $this->serializer->deserialize($body, $requestDTO->getResponseClass(), 'json');
+        return $this->serializer->deserialize(
+            $body,
+            $requestDTO->getResponseClass(),
+            'json',
+            [
+                AbstractObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true,
+            ]
+        );
     }
 
     private function createHttpRequest(RequestDTOInterface $requestDTO): RequestInterface

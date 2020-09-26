@@ -12,7 +12,11 @@ final class GCodeAnalysis
 {
     private float $estimatedPrintTime;
 
-    /** @var GCodeAnalysisFilamentTool[] */
+    /**
+     * The "aarray" is a patch until this fix is not released: https://github.com/symfony/symfony/pull/37559
+     *
+     * @var aarray<string, GCodeAnalysisFilamentTool>
+     */
     private ?array $filament = null;
 
     private ?GCodeAnalysisDimensions $dimensions = null;
@@ -23,6 +27,9 @@ final class GCodeAnalysis
         return $this->estimatedPrintTime;
     }
 
+    /**
+     * @return array<string, GCodeAnalysisFilamentTool>
+     */
     public function getFilament(): array
     {
         return $this->filament;

@@ -1,0 +1,63 @@
+{
+  "files": [
+    {
+      "date": 1600800000,
+      "display": "foo.gcode",
+      "gcodeAnalysis": {
+        "dimensions": {
+          "depth": 160.0,
+          "height": 140.0,
+          "width": 170.5
+        },
+        "estimatedPrintTime": 10500.123456789123,
+        "filament": {
+          "tool0": {
+            "length": 35000.12345678912,
+            "volume": 80.12345678912345
+          }
+        },
+        "printingArea": {
+          "maxX": 180.5,
+          "maxY": 180.5,
+          "maxZ": 180.5,
+          "minX": 0.0,
+          "minY": -3.0,
+          "minZ": 0.0
+        }
+      },
+      "hash": "8e7da6f0ed0afd9fc01b7a3ee59e0bd5995c3c26",
+      "name": "foo.gcode",
+      "origin": "local",
+      "path": "foo.gcode",
+      "prints": {
+        "failure": 0,
+        "last": {
+          "date": 1600610315.121494,
+          "printTime": 13142.74262396479,
+          "success": true
+        },
+        "success": 1
+      },
+      "refs": {
+        "download": "http://example.com/downloads/files/local/foo.gcode",
+        "resource": "http://example.com/api/files/local/foo.gcode"
+      },
+      "size": 915000,
+      "statistics": {
+        "averagePrintTime": {
+          "_default": 13150.12345678901
+        },
+        "lastPrintTime": {
+          "_default": 13150.12345678901
+        }
+      },
+      "type": "machinecode",
+      "typePath": [
+        "machinecode",
+        "gcode"
+      ]
+    }
+  ],
+  "free": 102400,
+  "total": 409600
+}
